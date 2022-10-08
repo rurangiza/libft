@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:16:51 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/06 13:34:12 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/07 13:49:31 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t length)
 	size_t		i;
 
 	i = 0;
-	if (!dest)
+	if (!dest && !src)
 		return (0);
-	if (dest && src)
+	while (i < length)
 	{
-		while (i < length)
-		{
-			((char *)dest)[i] = ((char *)src)[i];
-			i++;
-		}
+		((char *)dest)[i] = ((char *)src)[i];
+		i++;
 	}
 	return (dest);
 }

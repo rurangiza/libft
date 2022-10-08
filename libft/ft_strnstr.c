@@ -6,60 +6,57 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:51:07 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/05 16:43:45 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/07 14:44:11 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+// Locates the first occurence of the string needle
+// in the string haystack
+// while searching not more than len characters
+
+// Iterate thorugh the haystack
+	// Each step, 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	h_index;
+	size_t	n_index;
 	size_t	needle_len;
+	size_t	i = 0;
 
 	needle_len = ft_strlen(needle);
-
-	if (!len)
+	// Error handling
+	if (!haystack)
 		return (0);
-	if (needle)
+	if (needle[i])
 	{
-		i = 0;
-		while (((char *)haystack)[i] && (i < len))
+		h_index = 0;
+		while (((char *)haystack)[h_index] && (h_index < len))
 		{
-			j = 0;
-			while (((char *)haystack)[i + j] == needle[j] && ((i + j) < len))
+			n_index = 0;
+			while (((char *)haystack)[h_index + n_index] == needle[n_index] && ((h_index + n_index) < len))
 			{
-				j++;
+				n_index++;
 			}
-			if (j > 0)
-			{
-				// pointer 1st character occurence of needle is returned
-				if (j == needle_len)
-					return (&((char *)haystack)[i]);
-				else
-					return (0);
-			}
-			i++;
+			if (n_index == needle_len)
+				return (((char *)haystack) + h_index);
+			h_index++;
 		}
-		// non needle in haystack => NULL is returned
 		return (0);
 	}
 	else
-	{
-		// needle is empty string => hastack is returned
 		return ((char *)haystack);
-	}
 }
 
 // #include <stdio.h>
 // #include <string.h>
 // int	main(void)
 // {
-// 	const char *haystack = "The day has come to move forward";
-// 	const char *needle = "he";
-// 	size_t len = 2;
-// 	printf("Returns : %s\n", ft_strnstr(haystack, needle, len));
+// 	const char haystack[30] = "aaabcabcd";
+// 	const char *needle = "abcd";
+// 	size_t len = 9;
 // 	printf("Returns : %s\n", strnstr(haystack, needle, len));
+// 	printf("Returns : %s\n", ft_strnstr(haystack, needle, len));
 // 	return (0);
 // }

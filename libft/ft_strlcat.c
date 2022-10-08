@@ -12,38 +12,41 @@
 
 #include "libft.h"
 
+
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	j;
+	size_t	src_index;
+	size_t	dest_len;
 	size_t	src_len;
+	size_t	len;
 
-	src_len = (size_t)ft_strlen(src);
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	src_index = 0;
 	if (dstsize)
 	{
-		i = 0; // 5
-		j = 0;
-		while (dest[i++]);
-		while ((j < (dstsize - 1)) && dstsize < src_len)
+		while (src[src_index] && ((dest_len + src_index) < (dstsize - 1)))
 		{
-			dest[i + j] = src[j];
-			j++;
+			dest[dest_len + src_index] = src[src_index];
+			src_index++;
 		}
-		dest[i + j] = '\0';
-		return (ft_strlen(dest) + j);
+		dest[dest_len + src_index] = '\0';
 	}
-	return (src_len);
+	if (dstsize > dest_len)
+		return (dest_len + src_len);
+	else
+		return(dstsize + src_len);
 }
 
-#include <stdio.h>
-#include <string.h>
 
-int main(void)
-{
-	char dest[4] = "wor";
-	printf("Original    : %zu\n", strlcat(dest, "abcdefgh", 5));
-	printf("My function : %zu\n", ft_strlcat(dest, "", 5));
-	return (0);
-}
+// #include <stdio.h>
+// #include <string.h>
+// int main(void)
+// {
+// 	//char dest[] = 0;
+// 	char src[] = "nyan !";
+// 	printf("%zu\n", strlcat((void *)0, src, 0));
+// 	printf("%zu\n", ft_strlcat((void *)0, src, 0));
+// }
 
-// S'arreter quand size > longueur de src
+// In tripouille, the last test crashes. works if protect strlen, but even original is not protected, so we fine
