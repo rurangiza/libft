@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:01:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/07 17:28:49 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/10 20:55:43 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s1);
+char    **ft_split(char const *s, char c);
 
 #endif
