@@ -1,13 +1,31 @@
-# Curriculum
-## Programming Foundations
-The curriculum at 42 schools consists of a list of projects we need to complete before a certain deadline. 
-Everytime we complete a project, our deadline is pushed furher, but if we reach that deadline, we are dropped out of the school.
-In the first year at 42, we learn foundation concepts in programming and how to code in C.
+# Libft
+## A library of basic functions in C
 
-The subjects covered by our projects range from:
-- Unix C
-- Algorithms
-- Networks
-- System administration
-- Graphics programming
-- Object oriented programming
+This project consists of re-writing built-in functions in C from scratch using our own logic.
+
+The goal being to understand how they work exactly, what clever tricks were used to implement them, and recognize their strengths/limitations so we can use them in a more deliberate way.
+
+In this project, I learned how to:
+- Implement functions for tasks like string handling (identify characters type / copy, concatenate, trim, split, search / convert to a string to a number,...) 
+- Create a custom library
+- Write a Makefile 
+
+## Table of content
+| Function name | Description |
+|---|---|
+| isalpha  | The isalpha() function checks whether a character is an alphabet or not.  |
+|  isdigit | The isdigit() function checks whether a character is numeric character (0-9) or not.  |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+|   |   |
+
+
