@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:05:32 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/11 14:22:47 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/11 14:44:47 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,14 @@ int	find_size(int n)
 
 char *ft_itoa(int n)
 {
+	if (n < 0) // NEGATIF
+	{
+		n *= -1;
+	}
 	int len = find_size(n) + 1;
 	char *buffer;
-
 	buffer = malloc(sizeof(char) * (len));
-	while (n != 0)
+	while (n > 0) // POSITIF
 	{
 		buffer[len - 1] = (n % 10) + '0';
 		n = n / 10;
@@ -51,8 +54,10 @@ char *ft_itoa(int n)
 	return (buffer);
 }
 
-int main(void)
-{
-	printf("%s\n", ft_itoa(589634));
-	return (0);
-}
+// int main(void)
+// {
+// 	char *str = ft_itoa(589634);
+// 	printf("%s\n", str);
+// 	free(str);
+// 	return (0);
+// }
