@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/11 09:42:21 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/11 13:45:36 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void ft_putnbr_fd(int nb, int fd)
 		ft_putchar_fd(ch, fd);
 	}
 }
-
 
 // int main(void)
 // {
