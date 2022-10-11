@@ -1,3 +1,4 @@
-libftTester/
-libft-unit-test/
+./_test01/
+./_test02/
+./_test03/
 .DS_Store
