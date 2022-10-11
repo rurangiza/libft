@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
+/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 20:56:03 by Arsene            #+#    #+#             */
-/*   Updated: 2022/10/11 00:48:15 by Arsene           ###   ########.fr       */
+/*   Updated: 2022/10/11 09:15:03 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-
-// int find_size()
-// {
-// }
 
 void ft_split(char const *s, char c)
 {
