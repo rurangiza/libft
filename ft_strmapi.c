@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:59:19 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/11 11:00:24 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:04:34 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ptr[s_index] = f(s_index, s[s_index]);
 		s_index++;
 	}
+	ptr[s_index] = '\0';
 	return (ptr);
 }
 
