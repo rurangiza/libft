@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/11 09:07:50 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/11 10:21:38 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,5 @@ int	ft_atoi(const char *str)
 	//return (0);
 	return (sign * res);
 }
+
+// Limite long long returns -1
