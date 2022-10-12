@@ -5,40 +5,108 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/10 20:56:03 by Arsene            #+#    #+#             */
-/*   Updated: 2022/10/11 09:15:03 by arurangi         ###   ########.fr       */
+/*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
+/*   Updated: 2022/10/12 15:53:10 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Fonction 
+qui découpe une chaîne de caractères 
+en fonction d’une autre chaîne de caractères.
+*/
+
+#include <stdlib.h>
 #include <stdio.h>
 
-void ft_split(char const *s, char c)
+static int	count_words(char *str, char c)
 {
-    int i;
-    int word_count;
-    word_count = 0;
-    i = 1;
-    // Trouver le nombre de mots
-
-    while (s[i])
-    {
-        if (s[i] == c && s[i - 1] != c)
-        {
-            if (s[i + 1] == c)
-                i++;
-            else if (s[i + 1] == c && s[i + 2] == '\0')
-                word_count++;
-            else
-                word_count++;
-        }
-        i++;
-    }
-    printf("%d\n", word_count);
+	int	count;
+	int	tmp;
+	int	i;
+	
+	count = 0;
+	tmp = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			tmp = 0;
+		else if (tmp == 0)
+		{
+			tmp = 1;
+			count++;
+		}
+		i++;
+	}
+	return (count);
 }
+
+static int	set_wrd_mem(char *str,char ch, char **list)
+{
+	int	wrd_len;
+	int ls_index;
+	int	s_index;
+	
+	ls_index = 0;
+	wrd_len = 0;
+	s_index = 0;
+	while (str[s_index])
+	{
+		if (str[s_index] == ch)
+		{
+			if (wrd_len > 0)
+			{
+				list[ls_index] = malloc(sizeof(char) * (wrd_len + 1));
+				if (!list[ls_index])
+					return (NULL);
+				ls_index++;
+				wrd_len = 0;
+			}
+		}
+		else
+			wrd_len++;
+		s_index++;
+	}
+	list[ls_index] = malloc(sizeof(char) * (wrd_len + 1));
+	if (!list[ls_index])
+		return (NULL);
+	return (1);
+}
+
+void	tst_split(char *str, char ch)
+{
+	char **list;
+	int	words;
+	// Find number of words => allocate space to list
+	words = count_words(str, ch);
+	list = malloc(sizeof(char *) * (words + 1));
+	if (!list)
+		return (NULL);
+	// Find length of each word => allocate space
+	set_wrd_mem(str, ch, list);
+	// Copy strings
+	int i = 0;
+	int ls_index = 0;
+	while (str[i])
+	{
+		while (str[i] != ch)
+		{
+			list[ls_index][] = str[i];
+			i++;
+			ls_index++;
+		}
+		i++;
+	}
+	// Return value
+	return (list);
+}
+
 
 int main(void)
 {
-    char *str = " a";
-    ft_split(str, ' ');
-    return (0);
+	char *str = "Bob Eric David Lemoine";
+	int nbr_words = count_wrds(str, ' ');
+	tst_split(str, ' ');
+	return (0);
 }
