@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/12 16:27:55 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:47:44 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,13 @@ char	**ft_split(char *str, char ch)
 		else if (wrd_index > 0)
 		{
 			list[ls_index][wrd_index] = '\0';
+			wrd_index = 0;
 			ls_index++;
 		}
 		i++;
 	}
 	list[ls_index][wrd_index] = '\0';
+	list[ls_index + 1] = '\0';
 	// Return value
 	return (list);
 }
@@ -113,6 +115,15 @@ int main(void)
 {
 	char *str = "Bob Eric David Lemoine";
 	int nbr_words = count_words(str, ' ');
-	ft_split(str, ' ');
+	char **list = ft_split(str, ' ');
+	
+	int i;
+
+	i = 0;
+	while (list[i])
+	{
+		printf("%s\n", list[i]);
+		i++;
+	}
 	return (0);
 }
