@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/12 15:53:10 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/12 16:27:55 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	set_wrd_mem(char *str,char ch, char **list)
 			{
 				list[ls_index] = malloc(sizeof(char) * (wrd_len + 1));
 				if (!list[ls_index])
-					return (NULL);
+					return (0);
 				ls_index++;
 				wrd_len = 0;
 			}
@@ -70,11 +70,11 @@ static int	set_wrd_mem(char *str,char ch, char **list)
 	}
 	list[ls_index] = malloc(sizeof(char) * (wrd_len + 1));
 	if (!list[ls_index])
-		return (NULL);
+		return (0);
 	return (1);
 }
 
-void	tst_split(char *str, char ch)
+char	**ft_split(char *str, char ch)
 {
 	char **list;
 	int	words;
@@ -88,25 +88,31 @@ void	tst_split(char *str, char ch)
 	// Copy strings
 	int i = 0;
 	int ls_index = 0;
+	int wrd_index = 0;
+	int tmp = 0;
 	while (str[i])
 	{
-		while (str[i] != ch)
+		if (str[i] != ch)
 		{
-			list[ls_index][] = str[i];
-			i++;
+			list[ls_index][wrd_index] = str[i];
+			wrd_index++;
+		}
+		else if (wrd_index > 0)
+		{
+			list[ls_index][wrd_index] = '\0';
 			ls_index++;
 		}
 		i++;
 	}
+	list[ls_index][wrd_index] = '\0';
 	// Return value
 	return (list);
 }
 
-
 int main(void)
 {
 	char *str = "Bob Eric David Lemoine";
-	int nbr_words = count_wrds(str, ' ');
-	tst_split(str, ' ');
+	int nbr_words = count_words(str, ' ');
+	ft_split(str, ' ');
 	return (0);
 }
