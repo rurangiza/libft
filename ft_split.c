@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/12 16:47:44 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/12 17:48:00 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,15 @@ static int	count_words(char *str, char c)
 
 static int	set_wrd_mem(char *str,char ch, char **list)
 {
+	// Local variables
 	int	wrd_len;
 	int ls_index;
 	int	s_index;
 	
 	ls_index = 0;
 	wrd_len = 0;
+	
+	// Allocate memory for each word
 	s_index = 0;
 	while (str[s_index])
 	{
@@ -69,6 +72,7 @@ static int	set_wrd_mem(char *str,char ch, char **list)
 		s_index++;
 	}
 	list[ls_index] = malloc(sizeof(char) * (wrd_len + 1));
+	//list[ls_index + 1] = malloc(sizeof(char) * 1);
 	if (!list[ls_index])
 		return (0);
 	return (1);
@@ -86,15 +90,14 @@ char	**ft_split(char *str, char ch)
 	// Find length of each word => allocate space
 	set_wrd_mem(str, ch, list);
 	// Copy strings
-	int i = 0;
+	int s_index = 0;
 	int ls_index = 0;
 	int wrd_index = 0;
-	int tmp = 0;
-	while (str[i])
+	while (str[s_index])
 	{
-		if (str[i] != ch)
+		if (str[s_index] != ch)
 		{
-			list[ls_index][wrd_index] = str[i];
+			list[ls_index][wrd_index] = str[s_index];
 			wrd_index++;
 		}
 		else if (wrd_index > 0)
@@ -103,27 +106,28 @@ char	**ft_split(char *str, char ch)
 			wrd_index = 0;
 			ls_index++;
 		}
-		i++;
+		s_index++;
 	}
-	list[ls_index][wrd_index] = '\0';
-	list[ls_index + 1] = '\0';
+	//list[ls_index][wrd_index] = '\0';
+	//list[ls_index + 1] = NULL;
+	list[words] = NULL;
 	// Return value
 	return (list);
 }
 
-int main(void)
-{
-	char *str = "Bob Eric David Lemoine";
-	int nbr_words = count_words(str, ' ');
-	char **list = ft_split(str, ' ');
+// int main(void)
+// {
+// 	/* Test 01 */ //char *str = "Bob Eric David Lemoine";
+// 	/* Test 06 */ char *str6 = "  tripouille  42  ";
+// 	char **list = ft_split(str6, ' ');
 	
-	int i;
-
-	i = 0;
-	while (list[i])
-	{
-		printf("%s\n", list[i]);
-		i++;
-	}
-	return (0);
-}
+// 	int i = 0;
+// 	while (list[i])
+// 	{
+// 		printf("%s\n", list[i]);
+// 		free(list[i]);
+// 		i++;
+// 	}
+// 	//free(list);
+// 	return (0);
+// }
