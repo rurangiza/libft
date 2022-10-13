@@ -6,27 +6,38 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:44:31 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/07 17:03:11 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:34:33 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+The strdup() and strndup() functions are used to duplicate a string.
+*/
+
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(const char *str)
 {
-	int		s1_len;
-	char	*copy;
-	int		i;
-
-	s1_len = ft_strlen(s1);
-	copy = (char *) malloc(sizeof(char) * (s1_len + 1));
-	i = 0;
-	while (s1[i])
+	int		s_len;
+	char	*str_copy;
+	int		s_index;
+	// Error handling
+	if (!str)
+		return (NULL);
+	// Allocate memory based on size of str
+	s_len = ft_strlen(str);
+	str_copy = (char *) malloc(sizeof(char) * (s_len + 1));
+	if (!str_copy)
+		return (NULL);
+	// Copy str into "copy"
+	s_index = 0;
+	while (str[s_index])
 	{
-		copy[i] = s1[i];
-		i++;
+		str_copy[s_index] = str[s_index];
+		s_index++;
 	}
-	return (copy);
+	str_copy[s_index] = '\0';
+	return (str_copy);
 }
 
 // #include <stdio.h>

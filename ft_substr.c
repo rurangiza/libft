@@ -6,38 +6,45 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:08:24 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/11 09:12:36 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/13 17:55:10 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+Returns a substring from the string ’s’.
+The substring begins at index ’start' and is of maximum size ’len’.
+*/
+
 #include "libft.h"
 
-/*
-Allocates (with malloc(3)) and returns a substring
-from the string ’s’.
-The substring begins at index ’start’ and is of
-maximum size ’len’.
-*/
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*ptr;
+	char	*sub_str;
+	int		s_len;
 	int	i;
+	
+	// Find true maximum length
+	i = 0;
+	while (i < len && s[start + i])
+		i++;
+	len = i;
+	s_len = ft_strlen(s);
 
-	ptr = malloc(sizeof(char) * len + 1);
-	if (!ptr)
+	sub_str = malloc(sizeof(char) * len + 1);
+	if (!sub_str)
 		return (NULL);
-	if (start >= ft_strlen(s))
+	if (start >= s_len)
 	{
-		ptr[0] = '\0';
-		return (ptr);
+		sub_str[0] = '\0';
+		return (sub_str);
 	}
 	i = 0;
 	while (i < len && ((char *)s)[start + i])
 	{
-		ptr[i] = s[start + i];
+		sub_str[i] = s[start + i];
 		i++;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	sub_str[i] = '\0';
+	return (sub_str);
 }
 
