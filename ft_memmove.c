@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:54:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/12 11:22:44 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:49:27 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,34 @@ void	*ft_memmove(void *dest, const void *src, size_t nbr)
 {
 	size_t	i;
 	i = 0;
-	
-	if (dest > src)
+	if (!dest && !src)
+		return (NULL);
+	if (dest - src < nbr) // Check for overlap
 	{
-		while ((nbr - 1) >= 0)
+		i = nbr - 1;
+		while (i < nbr) // why this works
 		{
-			((char *)dest)[nbr] = ((char *)src)[nbr];
-			nbr--;
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i--;
 		}
 	}
 	else
 	{
 		while (i < nbr)
 		{
-			((char *)dest)[i] = ((char *)src)[i];
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
 	}
 	return (dest);
 }
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char *dest = "abcdef";
+// 	printf("%s\n", dest);
+// 	ft_memmove(dest + 2, dest, 3);
+// 	printf("%s\n", dest);
+// 	return (0);
+// }
