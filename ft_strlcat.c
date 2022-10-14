@@ -18,10 +18,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	size_t	src_index;
 	size_t	dest_len;
 	size_t	src_len;
-	size_t	len;
 
-	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
+	if (dest)
+		dest_len = ft_strlen(dest);
 	src_index = 0;
 	if (dstsize)
 	{
@@ -46,7 +46,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 // 	//char dest[] = 0;
 // 	char src[] = "nyan !";
 // 	printf("%zu\n", strlcat((void *)0, src, 0));
-// 	printf("%zu\n", ft_strlcat((void *)0, src, 0));
+// 	//printf("%zu\n", ft_strlcat((void *)0, src, 0));
 // }
 
 // In tripouille, the last test crashes. works if protect strlen, but even original is not protected, so we fine

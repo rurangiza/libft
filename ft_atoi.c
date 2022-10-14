@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/12 10:25:24 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:42:54 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_atoi(const char *str)
 {
 	int i;
-	int res;
-	int sign;
+	unsigned long long res;
+	unsigned long long sign;
 
 	sign = 1;
 	res = 0;
@@ -43,3 +43,10 @@ int	ft_atoi(const char *str)
 
 // Limite long long returns -1
 // Tester avec limites d'un int && unsigned long long
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main(void)
+// {
+// 	printf("%d\n", ft_atoi(" 214748369099999444  "));
+// 	printf("%d\n", atoi("  214748369099999444  "));
+// }

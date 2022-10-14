@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:10:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/11 10:24:07 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:42:28 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ptr;
 	int		len;
 
+	// Error handling
 	if (!s1 || !set)
 		return (0);
 	i_start = 0;
 	i_end = ft_strlen(s1);
 	// Define START of string
-	while (ft_strchr(set, s1[i_start]) != NULL && s1[i_start] != '\0') // trouve
+	while (ft_strchr(set, s1[i_start]) != NULL && s1[i_start] != '\0') // While not found & not the end
 		i_start++;
 	// Check for valid start
-	if (i_start == i_end)
+	if (i_start == i_end) // Went through the whole string = string only contains sets
 	{
 		ptr = ft_strdup("");
 		if (!ptr)
@@ -39,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_strchr(set, s1[i_end]) != NULL)
 		i_end--;
 	len = ((i_end - i_start) + 1);
-	ptr = malloc(sizeof(char) * len);
+	ptr = malloc(sizeof(char) * len + 1);
 	if (!ptr)
 		return (NULL);
 	//ptr = ft_substr(s1, i_start, len);
