@@ -6,17 +6,18 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/14 15:42:54 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:09:48 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 int	ft_atoi(const char *str)
 {
 	int i;
-	unsigned long long res;
-	unsigned long long sign;
+	long long res;
+	long long sign;
 
 	sign = 1;
 	res = 0;
@@ -34,6 +35,14 @@ int	ft_atoi(const char *str)
 	// Handle numbers
 	while (str[i] >= 48 && str[i] <= 57)
 	{
+		// handling overflow test case
+        if (res > INT_MAX / 10 || (res == INT_MAX / 10 && str[i] - '0' > 7))
+        {
+            if (sign == 1)
+                return INT_MAX;
+            else
+                return INT_MIN;
+        }
 		res = (res * 10) + (str[i] - '0');
 		i++;
 	}
