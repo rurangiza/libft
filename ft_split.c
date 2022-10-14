@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/13 17:36:48 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:01:26 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,111 +16,108 @@ qui découpe une chaîne de caractères
 en fonction d’une autre chaîne de caractères.
 */
 
-// #include <stdlib.h>
-// #include <stdio.h>
 #include "libft.h"
 
-static int	count_words(char *str, char c)
+static int    wordcount(char *str, char c)
 {
-	int	count;
-	int	tmp;
-	int	i;
+    int    i;
+    int    count;
 
-	count = 0;
-	tmp = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			tmp = 0;
-		else if (tmp == 0)
-		{
-			tmp = 1;
-			count++;
-		}
-		i++;
-	}
-	return (count);
+    i = 0;
+    count = 0;
+    while (str[i] != '\0')
+    {
+        while (str[i] != '\0' && str[i] == c)
+            i++;
+        if (str[i] != '\0')
+            count++;
+        while (str[i] != '\0' && str[i] != c)
+            i++;
+    }
+    return (count);
 }
 
-static int	set_wrd_mem(char const *str, char ch, char **list)
+static char    *ft_word(char *str, char c)
 {
-	int	wrd_len;
-	int	ls_index;
-	int	s_index;
+    int     i;
+    int     j;
+    char    *tab;
 
-	ls_index = 0;
-	wrd_len = 0;
-	s_index = 0;
-	while (str[s_index])
-	{
-		if (str[s_index] == ch)
-		{
-			if (wrd_len > 0)
-			{
-				list[ls_index] = malloc(sizeof(char) * (wrd_len + 1));
-				if (!list[ls_index])
-					return (0);
-				ls_index++;
-				wrd_len = 0;
-			}
-		}
-		else
-			wrd_len++;
-		s_index++;
-	}
-	list[ls_index] = malloc(sizeof(char) * (wrd_len + 1));
-	if (!list[ls_index])
-		return (0);
-	return (1);
+    i = 0;
+    j = 0;
+    while (str[j] != '\0' && str[j] != c)
+        j++;
+    tab = malloc(sizeof(char) * (j + 1));
+    if (!tab)
+        return (NULL);
+    while (i < j)
+    {
+        tab[i] = str[i];
+        i++;
+    }
+    tab[i] = '\0';
+    return (tab);
 }
 
-char	**ft_split(char const *str, char ch)
+static char **free_that_shit(char **tab)
 {
-	char **list;
-	int	words;
-	words = count_words((char *)str, ch);
-	list = malloc(sizeof(char *) * (words + 1));
-	if (!list)
-		return (NULL);
-
-	set_wrd_mem(str, ch, list);
-	int s_index = 0;
-	int ls_index = 0;
-	int wrd_index = 0;
-	while (str[s_index])
-	{
-		if (str[s_index] != ch)
-		{
-			list[ls_index][wrd_index] = str[s_index];
-			wrd_index++;
-		}
-		else if (wrd_index > 0)
-		{
-			list[ls_index][wrd_index] = '\0';
-			wrd_index = 0;
-			ls_index++;
-		}
-		s_index++;
-	}
-	list[words] = NULL;
-	return (list);
+    int i;
+    
+    i = 0;
+    while (i++ < (sizeof(tab) / sizeof(tab[0])))
+    {
+        if (!tab[i])
+            break;
+    }
+    if (i >= (sizeof(tab) / sizeof(tab[0])) - 1)
+        return (tab);
+    else
+    {
+        i = 0;
+        while (i < (sizeof(tab) / sizeof(tab[0])))
+            free(tab[i++]);
+        free(tab);
+    }
+    return (tab);
 }
 
+char    **ft_split(char const *s, char c)
+{
+    char    **arr;
+    int        i;
+    int        j;
+
+    i = 0;
+    j = 0;
+    if (!s)
+        return (0);
+    arr = malloc((wordcount((char *)s, c) + 1) * sizeof(char *));
+    if (!arr)
+        return (NULL);
+    while (s[i] != '\0')
+    {
+        while (s[i] != '\0' && s[i] == c)
+            i++;
+        if (s[i] != '\0')
+        {
+            arr[j] = ft_word((char *)s + i, c);
+            j++;
+        }
+        while (s[i] != '\0' && s[i] != c)
+            i++;
+    }
+    arr[j] = 0;
+    return (free_that_shit(arr));
+}
+
+// MAIN
 // int main(void)
 // {
 // 	/* Test 01 */ //char *str = " Bob Eric David Lemoine ";
-// 	/* Test 06 */ char *str6 = "  tripouille  42  ";
+// 	/* Test 06 */ char *str6 = "	";
 // 	char **list = ft_split(str6, ' ');
-
 // 	int i = 0;
 // 	while (list[i])
-// 	{
-// 		printf("%s\n", list[i]);
-// 		system(a.out leaks);
-// 		free(list[i]);
-// 		i++;
-// 	}
-// 	//free(list);
+// 		printf("%s\n", list[i++]);
 // 	return (0);
 // }
