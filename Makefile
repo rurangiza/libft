@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 13:53:56 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/17 16:02:44 by arurangi         ###   ########.fr        #
+#    Updated: 2022/10/18 14:58:29 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ BONUS =		ft_lstnew.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
 			ft_lstadd_back.c \
-			#ft_lstdelone.c \
-			#ft_lstclear.c \
-			#ft_lstiter.c \
-			#ft_lstmap.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c \
 			
 
 NAME = libft.a

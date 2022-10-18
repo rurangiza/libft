@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:01:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/17 15:33:47 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/18 12:34:43 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 typedef struct	s_list
 {
-	void *content;
-	struct s_list *next;
+	void 			*content;
+	struct s_list 	*next;
 }	t_list;
 
 t_list	*ft_lstnew(void *content);

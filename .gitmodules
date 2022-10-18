@@ -1,3 +1,6 @@
 [submodule "_test4"]
 	path = _test4
 	url = https://github.com/t0mm4rx/libftdestructor
+[submodule "libftTester"]
+	path = libftTester
+	url = https://github.com/Tripouille/libftTester.git

@@ -1,23 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/17 15:55:15 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/18 13:04:47 by arurangi         ###   ########.fr       */
+/*   Created: 2022/10/18 14:58:51 by arurangi          #+#    #+#             */
+/*   Updated: 2022/10/18 16:12:34 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Returns the last node of the list.
+/*
+ * Copie chaque noeud d'une liste chainee
+ * dans une nouvelle liste chainee
+ * en modifiant leurs contenus via une fonction precise.
+*/
+
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst)
+	t_list *new_lst;
+
+	if (!lst || !f || !del)
 		return (0);
-	while (lst->next)
+	
+	new_lst = malloc(sizeof(t_list));
+	if (!new_lst)
+		return (0);
+	
+	while (lst)
+	{
+		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
 		lst = lst->next;
-	return (lst);
+	}
+	return (new_lst);
 }
+// Current node
+// Move to next node
+// 

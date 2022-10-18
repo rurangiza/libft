@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:18:17 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/17 16:04:30 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:08:25 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,13 @@
 
 int ft_lstsize(t_list *lst)
 {
-	t_list	*current;
 	int		count;
 
 	count = 0;
-	current = malloc(sizeof(t_list));
-	if (!current)
-		return (0);
-	if (lst)
+	while (lst)
 	{
-		current = lst;
-		while (current != NULL)
-		{
-			count++;
-			current = current->next;
-		}
+		count++;
+		lst = lst->next;
 	}
 	return (count);
 }
