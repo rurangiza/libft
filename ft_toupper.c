@@ -6,9 +6,11 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:41:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/05 15:05:50 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/19 14:46:42 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <ctype.h>
 
 int	ft_toupper(int c)
 {
@@ -23,7 +25,8 @@ int	ft_toupper(int c)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char ch = 'q';
-// 	printf("%c\n", ft_toupper(ch));
+// 	char ch = 'e';
+// 	for (int i = -10; i < 0; i++)
+// 		printf("%c", toupper(i));
 // 	return (0);
 // }
