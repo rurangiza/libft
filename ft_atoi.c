@@ -6,9 +6,11 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/14 17:09:48 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:29:19 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Turns a string containing number into an integer
 
 #include "libft.h"
 #include <limits.h>
@@ -16,46 +18,50 @@
 int	ft_atoi(const char *str)
 {
 	int i;
-	long long res;
-	long long sign;
+	long sum;
+	long sign;
 
 	sign = 1;
-	res = 0;
+	sum = 0;
 	i = 0;
-	// handle spaces
 	while ((((str[i] >= 9 && str[i] <= 13) || str[i] == 32)))
 		i++;
-	// Handle signs
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign *= -1;
 		i++;
 	}
-	// Handle numbers
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		// handling overflow test case
-        if (res > INT_MAX / 10 || (res == INT_MAX / 10 && str[i] - '0' > 7))
-        {
-            if (sign == 1)
-                return INT_MAX;
-            else
-                return INT_MIN;
-        }
-		res = (res * 10) + (str[i] - '0');
+		if (sum >= LONG_MAX / 10 || (sum == LONG_MAX && str[i] - '0' > 7))
+		{
+			if (sign == 1)
+				return (-1);
+			else
+				return (0);
+		}
+		sum = (sum * 10) + (str[i] - '0');
 		i++;
 	}
-	//return (0);
-	return (sign * res);
+	return (sign * sum);
 }
 
-// Limite long long returns -1
-// Tester avec limites d'un int && unsigned long long
 // #include <stdio.h>
 // #include <stdlib.h>
 // int main(void)
 // {
-// 	printf("%d\n", ft_atoi(" 214748369099999444  "));
-// 	printf("%d\n", atoi("  214748369099999444  "));
+// 	const char nbr[21][50] = {
+// 		"1994", "  1994 ", " 19 94 ", "-1994 ", " +-1994 ", "1994b", "b1994", "19b94",
+// 		"", " ", " hidhej ", " --23",
+// 		"2147483647", "-2147483648", "2147483650", "-2147483650", /* INT_MAX, INT_MIN*/
+// 		"+9223372036854775807", "-9223372036854775808", "+9223372036854775810", "-9223372036854775810",  /* LONG_MAX, LONG_MIN */
+// 		"  000000000000000000009485"
+// 		};
+// 	for (int i = 0; i < 21; i++)
+// 		printf("[%d] %d\n", i, ft_atoi(nbr[i]));
+// 	return (0);
 // }
+
+
+
