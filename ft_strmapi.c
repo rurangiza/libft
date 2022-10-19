@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:59:19 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/11 12:04:34 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/18 16:44:39 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*ptr;
 	int		s_index;
 	// Handle empty string !!!!!!!!!!!!!!!!!!!!!!!!
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	// Allocate memory for ptr
 	s_length = ft_strlen(s);
