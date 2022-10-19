@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:58:51 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/19 17:15:17 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:22:00 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,32 +20,39 @@
 
 // t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // {
-// 	t_list *head = malloc(sizeof(t_list));
-// 	head = NULL;
+// 	t_list *new_lst;
+
+// 	if (!lst || !f || !del)
+// 		return (0);
+
+// 	new_lst = 0;
 
 // 	while (lst)
 // 	{
-// 		// Create node with modified content
-// 		// Add new node to back of list
-// 		ft_lstadd_back(&head, ft_lstnew(f(lst->content)));
-// 		// Move to next node
+// 		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
 // 		lst = lst->next;
 // 	}
-// 	return (head);
+// 	return (new_lst);
 // }
 
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *new_lst;
+	t_list *tmp;
 
 	if (!lst || !f || !del)
 		return (0);
-
+	
 	new_lst = 0;
-
 	while (lst)
 	{
-		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
+		tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
+		{
+			del(tmp);
+			free(tmp);
+		}
+		ft_lstadd_back(&new_lst, tmp);
 		lst = lst->next;
 	}
 	return (new_lst);
