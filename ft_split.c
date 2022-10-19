@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/14 15:02:46 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/19 17:10:52 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,26 +59,38 @@ static char    *ft_word(char *str, char c)
     return (tab);
 }
 
-static char **free_that_shit(char **tab)
-{
-    int i;
+// static char **free_that_shit(char **tab)
+// {
+//     int i;
     
-    i = 0;
-    while (i++ < (sizeof(tab) / sizeof(tab[0])))
-    {
-        if (!tab[i])
-            break;
-    }
-    if (i >= (sizeof(tab) / sizeof(tab[0])) - 1)
-        return (tab);
-    else
-    {
-        i = 0;
-        while (i < (sizeof(tab) / sizeof(tab[0])))
-            free(tab[i++]);
-        free(tab);
-    }
-    return (tab);
+//     i = 0;
+//     while (i++ < (sizeof(tab) / sizeof(tab[0])))
+//     {
+//         if (!tab[i])
+//             break;
+//     }
+//     if (i >= (sizeof(tab) / sizeof(tab[0])) - 1)
+//         return (tab);
+//     else
+//     {
+//         i = 0;
+//         while (i < (sizeof(tab) / sizeof(tab[0])))
+//             free(tab[i++]);
+//         free(tab);
+//         tab = NULL;
+//     }
+//     return (tab);
+// }
+
+static char **free_that_shit2(char **tab)
+{
+    int index;
+    
+    index = 0;
+    while (tab[index])
+        free(tab[index++]);
+    free(tab);
+    return (0);
 }
 
 char    **ft_split(char const *s, char c)
@@ -101,13 +113,15 @@ char    **ft_split(char const *s, char c)
         if (s[i] != '\0')
         {
             arr[j] = ft_word((char *)s + i, c);
+            if (!arr[j])
+                return (free_that_shit2(arr));
             j++;
         }
         while (s[i] != '\0' && s[i] != c)
             i++;
     }
     arr[j] = 0;
-    return (free_that_shit(arr));
+    return (arr);
 }
 
 // MAIN
