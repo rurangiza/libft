@@ -3,12 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:19:37 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/06 08:50:17 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:09:37 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * copies the character {ch} (an unsigned char) 
+ * to the first {nbr} characters of the string pointed to, by the argument {str}
+*/
 
 #include "libft.h"
 

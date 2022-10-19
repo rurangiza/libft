@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:58:23 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/17 14:48:59 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/19 22:27:24 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,14 @@ takes in two parameters that collectively specify the amount of memory
 */
 
 #include "libft.h"
+#include <limits.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
+
+	if (count > 65535 || size > 65535)
+		return (NULL);
 	ptr = malloc(size * count);
 	if (ptr == NULL)
 		return (NULL);

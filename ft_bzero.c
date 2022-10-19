@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:48:39 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/06 10:32:48 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:20:24 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ *  Writes zeroes to a byte string
+*/
 
 #include "libft.h"
 
