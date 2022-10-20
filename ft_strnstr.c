@@ -6,11 +6,10 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:51:07 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:51:28 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:48:44 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 /*
  * Locates the first occurence of the string needle
  * in the string haystack
@@ -19,19 +18,17 @@
 
 /* Iterate thorugh the haystack */
 
+#include "libft.h"
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	h_index;
 	size_t	n_index;
-	size_t	needle_len;
-	size_t	i;
 
 	if (!haystack && !len)
 		return (NULL);
-	i = 0;
-	if (needle[i])
+	if (needle[0])
 	{
-		needle_len = ft_strlen(needle);
 		h_index = 0;
 		while (((char *)haystack)[h_index] && (h_index < len))
 		{

@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 {
 	size_t	src_index;
@@ -38,7 +37,6 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 		return (dstsize + src_len);
 }
 
-
 // #include <stdio.h>
 // #include <string.h>
 // int main(void)
@@ -48,5 +46,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 // 	printf("%zu\n", strlcat((void *)0, src, 0));
 // 	//printf("%zu\n", ft_strlcat((void *)0, src, 0));
 // }
-
-// In tripouille, the last test crashes. works if protect strlen, but even original is not protected, so we fine

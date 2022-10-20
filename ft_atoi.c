@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:11:06 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:33:57 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,46 +25,50 @@ int	handle_return(long sign)
 
 int	ft_atoi(const char *str)
 {
-	int		i;
+	int		index;
 	long	sum;
 	long	sign;
 
+	index = 0;
+	while ((((str[index] >= 9 && str[index] <= 13) || str[index] == 32)))
+		index++;
 	sign = 1;
-	sum = 0;
-	i = 0;
-	while ((((str[i] >= 9 && str[i] <= 13) || str[i] == 32)))
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[index] == '-' || str[index] == '+')
 	{
-		if (str[i] == '-')
+		if (str[index] == '-')
 			sign *= -1;
-		i++;
+		index++;
 	}
-	while (str[i] >= 48 && str[i] <= 57)
+	sum = 0;
+	while (str[index] >= 48 && str[index] <= 57)
 	{
-		if (sum >= LONG_MAX / 10 || (sum == LONG_MAX && str[i] - '0' > 7))
+		if (sum >= LONG_MAX / 10 || (sum == LONG_MAX && str[index] - '0' > 7))
 			handle_return(sign);
-		sum = (sum * 10) + (str[i] - '0');
-		i++;
+		sum = (sum * 10) + (str[index] - '0');
+		index++;
 	}
-	return (sign * sum);
+	return (sum * sign);
 }
 
 // #include <stdio.h>
 // #include <stdlib.h>
-// int main(void)
+
+// int	main(void)
 // {
-// 	const char nbr[21][50] = {
-// 		"1994", "  1994 ", " 19 94 ", "-1994 ", " +-1994 ", "1994b", "b1994", "19b94",
+// 	int			i;
+// 	const char	nbr[21][50] = {
+// 		"1994", "  1994 ", " 19 94 ", "-1994 ",
+// 		" +-1994 ", "1994b", "b1994", "19b94",
 // 		"", " ", " hidhej ", " --23",
-// 		"2147483647", "-2147483648", "2147483650", "-2147483650", /* INT_MAX, INT_MIN*/
-// 		"+9223372036854775807", "-9223372036854775808", "+9223372036854775810", "-9223372036854775810",  /* LONG_MAX, LONG_MIN */
+// 		"2147483647", "-2147483648",
+// 		"2147483650", "-2147483650",
+// 		"+9223372036854775807", "-9223372036854775808",
+// 		"+9223372036854775810", "-9223372036854775810",
 // 		"  000000000000000000009485"
-// 		};
-// 	for (int i = 0; i < 21; i++)
+// 	};
+
+// 	i = 0;
+// 	while (i < 21)
 // 		printf("[%d] %d\n", i, ft_atoi(nbr[i]));
 // 	return (0);
 // }
-
-
-

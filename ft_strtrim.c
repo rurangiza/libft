@@ -6,9 +6,14 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:10:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:52:22 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:15:10 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Removes specific character from beginning and end of string
+ * Returns: the trimmed string
+*/
 
 #include "libft.h"
 
@@ -22,6 +27,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (0);
+
 	i_start = 0;
 	i_end = ft_strlen(s1);
 	while (ft_strchr(set, s1[i_start]) != NULL && s1[i_start] != '\0')
@@ -45,13 +51,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ptr[i_ptr] = '\0';
 	return (ptr);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	char *str = "   xxx   xxx";
-// 	char *set = " x";
-// 	printf("%s\n", ft_strtrim(str, set));
-// 	return (0);
-// }

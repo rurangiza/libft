@@ -6,132 +6,101 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:47:34 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 14:50:19 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-Fonction 
-qui découpe une chaîne de caractères 
-en fonction d’une autre chaîne de caractères.
-*/
+/* 
+ * Breaks up a string {str}
+ * into an array of substrings
+ * based on a seperator character
+ */
 
 #include "libft.h"
 
-static int    wordcount(char *str, char c)
-{
-    int    i;
-    int    count;
+static int	count_words(char *str, char c);
+static char	*alloc_memword(char *str, char c);
+static char	**free_memword(char **tab);
 
-    i = 0;
-    count = 0;
-    while (str[i] != '\0')
-    {
-        while (str[i] != '\0' && str[i] == c)
-            i++;
-        if (str[i] != '\0')
-            count++;
-        while (str[i] != '\0' && str[i] != c)
-            i++;
-    }
-    return (count);
+char	**ft_split(char const *str, char ch)
+{
+	char	**array;
+	int		a_index;
+	int		i;
+
+	if (!str)
+		return (0);
+	array = malloc((count_words((char *)str, ch) + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	i = 0;
+	a_index = 0;
+	while (str[i])
+	{
+		while (str[i] == ch && str[i])
+			i++;
+		if (str[i] != ch && str[i])
+		{
+			array[a_index] = alloc_memword((char *)str + i, ch);
+			if (!array[a_index])
+				return (free_memword(array));
+			a_index++;
+		}
+		while (str[i] != ch && str[i])
+			i++;
+	}
+	array[a_index] = 0;
+	return (array);
 }
 
-static char    *ft_word(char *str, char c)
+static int	count_words(char *str, char ch)
 {
-    int     i;
-    int     j;
-    char    *tab;
+	int	i;
+	int	counter;
 
-    i = 0;
-    j = 0;
-    while (str[j] != '\0' && str[j] != c)
-        j++;
-    tab = malloc(sizeof(char) * (j + 1));
-    if (!tab)
-        return (NULL);
-    while (i < j)
-    {
-        tab[i] = str[i];
-        i++;
-    }
-    tab[i] = '\0';
-    return (tab);
+	i = 0;
+	counter = 0;
+	while (str[i] != '\0')
+	{
+		while (str[i] == ch && str[i] != '\0')
+			i++;
+		if (str[i] != ch && str[i] != '\0')
+			counter++;
+		while (str[i] != ch && str[i] != '\0')
+			i++;
+	}
+	return (counter);
 }
 
-// static char **free_that_shit(char **tab)
-// {
-//     int i;
-    
-//     i = 0;
-//     while (i++ < (sizeof(tab) / sizeof(tab[0])))
-//     {
-//         if (!tab[i])
-//             break;
-//     }
-//     if (i >= (sizeof(tab) / sizeof(tab[0])) - 1)
-//         return (tab);
-//     else
-//     {
-//         i = 0;
-//         while (i < (sizeof(tab) / sizeof(tab[0])))
-//             free(tab[i++]);
-//         free(tab);
-//         tab = NULL;
-//     }
-//     return (tab);
-// }
-
-static char **free_that_shit2(char **tab)
+static char	*alloc_memword(char *str, char ch)
 {
-    int index;
+	int		index;
+	int		length;
+	char	*word;
 
-    index = 0;
-    while (tab[index])
-        free(tab[index++]);
-    free(tab);
-    return (0);
+	length = 0;
+	while (str[length] != ch && str[length] != '\0')
+		length++;
+	word = malloc(sizeof(char) * (length + 1));
+	if (!word)
+		return (NULL);
+	index = 0;
+	while (index < length)
+	{
+		word[index] = str[index];
+		index++;
+	}
+	word[index] = '\0';
+	return (word);
 }
 
-char    **ft_split(char const *s, char c)
+static char	**free_memword(char **array)
 {
-    char    **arr;
-    int     i;
-    int     j;
+	int	index;
 
-    i = 0;
-    j = 0;
-    if (!s)
-        return (0);
-    arr = malloc((wordcount((char *)s, c) + 1) * sizeof(char *));
-    if (!arr)
-        return (NULL);
-    while (s[i] != '\0')
-    {
-        while (s[i] != '\0' && s[i] == c)
-            i++;
-        if (s[i] != '\0')
-        {
-            arr[j] = ft_word((char *)s + i, c);
-            if (!arr[j])
-                return (free_that_shit2(arr));
-            j++;
-        }
-        while (s[i] != '\0' && s[i] != c)
-            i++;
-    }
-    arr[j] = 0;
-    return (arr);
+	index = 0;
+	while (array[index])
+		free(array[index++]);
+	free(array);
+	return (0);
 }
-
-// MAIN
-// int main(void)
-// {
-// 	/* Test 01 */ //char *str = " Bob Eric David Lemoine ";
-// 	/* Test 06 */ char *str6 = "	";
-// 	char **list = ft_split(str6, ' ');
-// 	int i = 0;
-// 	while (list[i])
-// 		printf("%s\n", list[i++]);
-// 	return (0);
-// }

@@ -6,13 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:18:17 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:40:00 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:11:04 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 // Counts the number of nodes in a list
+
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {
