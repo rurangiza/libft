@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:05:32 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/13 16:40:18 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 10:55:32 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Negative numbers must be handled. */
 
 #include "libft.h"
 
-int	find_size(int n)
+static int	find_size(int n)
 {
 	int	count;
 	count = 0;
