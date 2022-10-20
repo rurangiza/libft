@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:08:24 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 15:14:03 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 18:04:01 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	int		i;
+	size_t		i;
 
 	if (start > ft_strlen(s))
 		return (ft_strdup(""));
