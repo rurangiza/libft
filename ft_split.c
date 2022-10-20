@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 14:50:19 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 16:15:38 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 #include "libft.h"
 
 static int	count_words(char *str, char c);
-static char	*alloc_memword(char *str, char c);
-static char	**free_memword(char **tab);
+static char	*copy_word(char *str, char c);
+static char	**free_array(char **tab);
+static char	**malloc_array(char *str, char ch);
 
 char	**ft_split(char const *str, char ch)
 {
@@ -28,9 +29,7 @@ char	**ft_split(char const *str, char ch)
 	int		a_index;
 	int		i;
 
-	if (!str)
-		return (0);
-	array = malloc((count_words((char *)str, ch) + 1) * sizeof(char *));
+	array = malloc_array((char *)str, ch);
 	if (!array)
 		return (NULL);
 	i = 0;
@@ -41,16 +40,28 @@ char	**ft_split(char const *str, char ch)
 			i++;
 		if (str[i] != ch && str[i])
 		{
-			array[a_index] = alloc_memword((char *)str + i, ch);
+			array[a_index] = copy_word((char *)str + i, ch);
 			if (!array[a_index])
-				return (free_memword(array));
+				return (free_array(array));
 			a_index++;
 		}
 		while (str[i] != ch && str[i])
 			i++;
 	}
-	array[a_index] = 0;
+	array[a_index] = NULL;
 	return (array);
+}
+
+static char	**malloc_array(char *str, char ch)
+{
+	char	**ptr;
+
+	if (!str)
+		return (NULL);
+	ptr = malloc((count_words((char *)str, ch) + 1) * sizeof(char *));
+	if (!ptr)
+		return (NULL);
+	return (ptr);
 }
 
 static int	count_words(char *str, char ch)
@@ -72,7 +83,7 @@ static int	count_words(char *str, char ch)
 	return (counter);
 }
 
-static char	*alloc_memword(char *str, char ch)
+static char	*copy_word(char *str, char ch)
 {
 	int		index;
 	int		length;
@@ -94,7 +105,7 @@ static char	*alloc_memword(char *str, char ch)
 	return (word);
 }
 
-static char	**free_memword(char **array)
+static char	**free_array(char **array)
 {
 	int	index;
 

@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:58:51 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 15:13:04 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 15:52:01 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,6 @@
 */
 
 #include "libft.h"
-
-// t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-// {
-// 	t_list *new_lst;
-
-// 	if (!lst || !f || !del)
-// 		return (0);
-
-// 	new_lst = 0;
-
-// 	while (lst)
-// 	{
-// 		ft_lstadd_back(&new_lst, ft_lstnew(f(lst->content)));
-// 		lst = lst->next;
-// 	}
-// 	return (new_lst);
-// }
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -48,7 +31,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		tmp = ft_lstnew(f(lst->content));
 		if (!tmp)
 		{
-			del(tmp);
+			del(tmp->content);
 			free(tmp);
 		}
 		ft_lstadd_back(&new_lst, tmp);
