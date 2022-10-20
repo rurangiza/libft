@@ -6,18 +6,17 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:40:47 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/06 14:39:56 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:47:56 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	char ch;
-	int	i;	
-	// Convert c to a char
+	char	ch;
+	int		i;
+
 	ch = c;
 	i = 0;
-	// Locates c in s
 	if (ch == '\0')
 	{
 		while (s[i])

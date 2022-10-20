@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:58:51 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/19 17:22:00 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:41:35 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@
 // 	return (new_lst);
 // }
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *new_lst;
-	t_list *tmp;
+	t_list	*new_lst;
+	t_list	*tmp;
 
 	if (!lst || !f || !del)
 		return (0);
-	
+
 	new_lst = 0;
 	while (lst)
 	{

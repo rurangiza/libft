@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/19 17:10:52 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:47:34 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ static char    *ft_word(char *str, char c)
 static char **free_that_shit2(char **tab)
 {
     int index;
-    
+
     index = 0;
     while (tab[index])
         free(tab[index++]);
@@ -96,8 +96,8 @@ static char **free_that_shit2(char **tab)
 char    **ft_split(char const *s, char c)
 {
     char    **arr;
-    int        i;
-    int        j;
+    int     i;
+    int     j;
 
     i = 0;
     j = 0;

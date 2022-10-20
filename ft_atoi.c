@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/19 13:29:19 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:11:06 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,19 @@
 #include "libft.h"
 #include <limits.h>
 
+int	handle_return(long sign)
+{
+	if (sign == 1)
+		return (-1);
+	else
+		return (0);
+}
+
 int	ft_atoi(const char *str)
 {
-	int i;
-	long sum;
-	long sign;
+	int		i;
+	long	sum;
+	long	sign;
 
 	sign = 1;
 	sum = 0;
@@ -35,12 +43,7 @@ int	ft_atoi(const char *str)
 	while (str[i] >= 48 && str[i] <= 57)
 	{
 		if (sum >= LONG_MAX / 10 || (sum == LONG_MAX && str[i] - '0' > 7))
-		{
-			if (sign == 1)
-				return (-1);
-			else
-				return (0);
-		}
+			handle_return(sign);
 		sum = (sum * 10) + (str[i] - '0');
 		i++;
 	}

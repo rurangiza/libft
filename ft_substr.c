@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:08:24 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/19 16:56:11 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:52:53 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ The substring begins at index ’start' and is of maximum size ’len’.
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub_str;
 	int		s_len;
-	int	i;
-	if ( start > ft_strlen(s))
+	int		i;
+
+	if (start > ft_strlen(s))
 		return (ft_strdup(""));
-	// Find true maximum length
 	i = 0;
 	while (i < len && s[start + i])
 		i++;
@@ -48,6 +48,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	sub_str[i] = '\0';
 	return (sub_str);
 }
+
 // #include <stdio.h>
 // int main(void)
 // {

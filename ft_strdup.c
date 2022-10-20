@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:44:31 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/14 15:51:31 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:48:04 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@ char	*ft_strdup(const char *str)
 	char	*str_copy;
 	int		s_index;
 
-	// Allocate memory based on size of str
 	s_len = ft_strlen(str);
 	str_copy = (char *) malloc(sizeof(char) * (s_len + 1));
 	if (!str_copy)
 		return (NULL);
-	// Copy str into "copy"
 	s_index = 0;
 	while (str[s_index])
 	{

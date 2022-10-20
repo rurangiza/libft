@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:41:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 10:58:44 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:01:06 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char ch;
-	
+	unsigned char	ch;
+
 	if (c == -1)
 		return (c);
 	ch = c;

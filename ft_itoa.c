@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:05:32 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 10:55:32 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:41:00 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Negative numbers must be handled. */
 static int	find_size(int n)
 {
 	int	count;
+
 	count = 0;
 	if (n == 0)
 		return (1);
@@ -36,12 +37,12 @@ static int	find_size(int n)
 	return (count);
 }
 
-char *ft_itoa(int nbr)
+char	*ft_itoa(int nbr)
 {
 	unsigned int	nbr_len;
 	char			*str;
 	unsigned int	u_nbr;
-	
+
 	nbr_len = find_size(nbr);
 	str = malloc(sizeof(char) * (nbr_len + 1));
 	if (!str)

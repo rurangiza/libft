@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:10:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/14 15:42:28 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:52:22 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,25 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ptr;
 	int		len;
 
-	// Error handling
 	if (!s1 || !set)
 		return (0);
 	i_start = 0;
 	i_end = ft_strlen(s1);
-	// Define START of string
-	while (ft_strchr(set, s1[i_start]) != NULL && s1[i_start] != '\0') // While not found & not the end
+	while (ft_strchr(set, s1[i_start]) != NULL && s1[i_start] != '\0')
 		i_start++;
-	// Check for valid start
-	if (i_start == i_end) // Went through the whole string = string only contains sets
+	if (i_start == i_end)
 	{
 		ptr = ft_strdup("");
 		if (!ptr)
 			return (NULL);
 		return (ptr);
 	}
-	// Define END of string
 	while (ft_strchr(set, s1[i_end]) != NULL)
 		i_end--;
 	len = ((i_end - i_start) + 1);
 	ptr = malloc(sizeof(char) * len + 1);
 	if (!ptr)
 		return (NULL);
-	//ptr = ft_substr(s1, i_start, len);
 	i_ptr = 0;
 	while (i_start <= i_end)
 		ptr[i_ptr++] = s1[i_start++];

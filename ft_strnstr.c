@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:51:07 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/14 17:01:08 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:51:28 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	h_index;
 	size_t	n_index;
 	size_t	needle_len;
-	size_t	i = 0;
+	size_t	i;
 
 	if (!haystack && !len)
 		return (NULL);
+	i = 0;
 	if (needle[i])
 	{
 		needle_len = ft_strlen(needle);
@@ -35,7 +36,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		while (((char *)haystack)[h_index] && (h_index < len))
 		{
 			n_index = 0;
-			while (haystack[h_index + n_index] == needle[n_index] && ((h_index + n_index) < len))
+			while (haystack[h_index + n_index] == needle[n_index]
+				&& ((h_index + n_index) < len))
 			{
 				if (needle[n_index + 1] == '\0')
 					return ((char *)haystack + h_index);

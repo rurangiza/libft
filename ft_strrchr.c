@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:17:40 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/14 16:07:01 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/20 11:51:48 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
-	char	ch; // Treat it as a char -> char limits != int limits
+	char	ch;
 	int		save_pos;
 
 	save_pos = -1;
@@ -27,7 +27,7 @@ char	*ft_strrchr(const char *s, int c)
 			i++;
 		return ((char *)s + i);
 	}
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == ch)
 			save_pos = i;
