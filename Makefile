@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+         #
+#    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 13:53:56 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/21 08:25:33 by Arsene           ###   ########.fr        #
+#    Updated: 2022/10/21 11:03:14 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =		ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
-			ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
+SRCS =		ft_atoi.c ft_bzero.c ft_calloc.c \
+			ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_isalnum.c \
 			ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c \
 			ft_strchr.c ft_strdup.c ft_strlcat.c \
 			ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c \
