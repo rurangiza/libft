@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:00:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 15:12:43 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:02:30 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Adds the node ’new’ at the end of the list.
+/*
+ * Adds {new} node at the end of the linked list
+*/
 
 #include "libft.h"
 

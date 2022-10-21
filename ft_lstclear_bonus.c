@@ -6,19 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 13:25:34 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:39:13 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:14:40 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * lst: The address of a pointer to a node.
- * del: The address of the function used to delete the content of the node.
-*/
-
-/*
- * Deletes and frees the given node and every
- * successor of that node, using the function ’del’ and free(3).
- * Finally, the pointer to the list must be set to NULL.
+ * Deletes the content of a given node and frees it
+ * also every successor of that node
 */
 
 #include "libft.h"

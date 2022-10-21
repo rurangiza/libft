@@ -10,6 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Concatenates {dstsize} of {src} to {dest}
+ * 
+ * Returns : total length of the string you tried to create
+*/
+
 #include "libft.h"
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
@@ -36,13 +42,3 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dstsize)
 	else
 		return (dstsize + src_len);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	//char dest[] = 0;
-// 	char src[] = "nyan !";
-// 	printf("%zu\n", strlcat((void *)0, src, 0));
-// 	//printf("%zu\n", ft_strlcat((void *)0, src, 0));
-// }

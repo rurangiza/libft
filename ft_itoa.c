@@ -6,36 +6,19 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:05:32 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:41:00 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:58:29 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// n: converts integers to ASCII
-
-/* Allocates (with malloc(3)) and returns a string
-representing the integer received as an argument.
-Negative numbers must be handled. */
-
-// The string representing the integer. NULL if the allocation fails.
+/*
+ * Converts an integer to a string (ASCII values)
+ *
+ * Returns : the string representing the integer or NULL if allocation fails
+*/
 
 #include "libft.h"
 
-static int	find_size(int n)
-{
-	int	count;
-
-	count = 0;
-	if (n == 0)
-		return (1);
-	if (n < 0)
-		count++;
-	while (n != 0)
-	{
-		count++;
-		n = n / 10;
-	}	
-	return (count);
-}
+static int	find_len(int nbr);
 
 char	*ft_itoa(int nbr)
 {
@@ -43,7 +26,7 @@ char	*ft_itoa(int nbr)
 	char			*str;
 	unsigned int	u_nbr;
 
-	nbr_len = find_size(nbr);
+	nbr_len = find_len(nbr);
 	str = malloc(sizeof(char) * (nbr_len + 1));
 	if (!str)
 		return (NULL);
@@ -66,11 +49,19 @@ char	*ft_itoa(int nbr)
 	return (str);
 }
 
-// #include <stdlib.h>
-// #include <stdio.h>
-// int main(void)
-// {
-// 	char *str = ft_itoa(456565);
-// 	printf("%s\n", str);
-// 	return (0);
-// }
+static int	find_len(int nbr)
+{
+	int	counter;
+
+	counter = 0;
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
+		counter++;
+	while (nbr != 0)
+	{
+		counter++;
+		nbr = nbr / 10;
+	}	
+	return (counter);
+}

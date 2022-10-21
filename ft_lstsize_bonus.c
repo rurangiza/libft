@@ -6,11 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 15:18:17 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 12:11:04 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:28:57 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Counts the number of nodes in a list
+/*
+ * Counts the number of nodes in a linked list
+*/
 
 #include "libft.h"
 
@@ -26,24 +28,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	t_list *head, *first, *second, *third, *fourth;
-
-// 	head = malloc(sizeof(t_list));
-// 	head->next = NULL;
-// 	first = malloc(sizeof(t_list));
-// 	head->next = first;
-
-// 	second = malloc(sizeof(t_list));
-// 	first->next = second;
-// 	third = malloc(sizeof(t_list));
-// 	second->next = third;
-
-// 	fourth = malloc(sizeof(t_list));
-// 	third->next = NULL;
-// 	int count = ft_lstsize(NULL);
-// 	printf("%d\n", count);
-// }

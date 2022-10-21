@@ -6,25 +6,31 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:24:26 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/06 16:46:54 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:16:36 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Copies {dstsize} of {src} to {dest}
+ * 
+ * Returns : length of {src}
+*/
+
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	size_t	i;
+	size_t	index;
 
-	if (size)
+	if (dstsize)
 	{
-		i = 0;
-		while (i < size - 1 && src[i])
+		index = 0;
+		while (index < dstsize - 1 && src[index])
 		{
-			dest[i] = src[i];
-			i++;
+			dest[index] = src[index];
+			index++;
 		}
-		dest[i] = '\0';
+		dest[index] = '\0';
 	}
 	return (ft_strlen(src));
 }

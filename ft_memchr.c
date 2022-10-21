@@ -6,9 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:04:38 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:42:30 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:31:16 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Locates first occurence of {c} in {s} considering only n bytes
+*/
 
 #include "libft.h"
 

@@ -6,18 +6,12 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:59:19 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:50:25 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:43:30 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// s: The string on which to iterate
-// f: The function to apply to each character
-
 /*
-Applies the function ’f’ to each character of the
-string ’s’, and passing its index as first argument
-to create a new string (with malloc(3)) resulting
-from successive applications of ’f’.
+ * Applies the function {f} to each character of the string {s}
 */
 
 #include "libft.h"

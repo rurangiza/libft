@@ -6,11 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:41:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:01:06 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:53:57 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
+/*
+ * Converts lowercase alphabet character to uppercase
+*/
 
 int	ft_toupper(int c)
 {
@@ -23,12 +25,3 @@ int	ft_toupper(int c)
 		ch -= 32;
 	return (ch);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char ch = 'e';
-// 	for (int i = -10; i < 0; i++)
-// 		printf("%c", toupper(i));
-// 	return (0);
-// }

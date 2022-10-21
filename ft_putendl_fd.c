@@ -6,9 +6,14 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:29:43 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:43:42 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:51:46 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Outputs the string {s} to the given file descriptor {fd}
+ * followed by a newline
+*/
 
 #include "libft.h"
 

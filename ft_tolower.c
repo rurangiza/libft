@@ -6,9 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:47:03 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:53:21 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:52:39 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Converts uppecase alphabet character to lowercase
+*/
 
 int	ft_tolower(int c)
 {
@@ -21,11 +25,3 @@ int	ft_tolower(int c)
 		ch += 32;
 	return (ch);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char ch = 'P';
-// 	printf("%c\n", ft_tolower(ch));
-// 	return (0);
-// }

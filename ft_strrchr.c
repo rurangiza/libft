@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:17:40 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 15:01:34 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:48:35 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,3 @@ char	*ft_strrchr(const char *s, int c)
 	else
 		return (NULL);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	const char s[] = "tripouille";
-// 	int	c = 'z';
-// 	printf("%s", ft_strrchr(s, c));
-// 	return (0);
-// }

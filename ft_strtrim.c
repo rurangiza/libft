@@ -6,12 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:10:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 15:39:25 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:48:55 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
  * Removes specific characters from beginning and end of string
+  *
  * Returns: the trimmed string
 */
 

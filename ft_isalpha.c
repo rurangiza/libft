@@ -6,9 +6,15 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:50:57 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 12:09:19 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:46:07 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Checks whether a character is an alphabet or not
+ *
+ * Returns : (1) = yes, (0) = no
+*/
 
 int	ft_isalpha(int c)
 {

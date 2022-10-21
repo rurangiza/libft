@@ -6,30 +6,24 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:51:41 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:48:30 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:01:41 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// s: The string on which to iterate
-// f: The function to apply to each character
-
 /*
-Applies the function ’f’ on each character of
-the string passed as argument, passing its index
-as first argument. Each character is passed by
-address to ’f’ to be modified if necessary.
+ * Applies function {f} on each character of the string passed as argument
 */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
+	int	index;
 
 	if (!f)
 		return ;
-	i = 0;
-	while (s[i])
+	index = 0;
+	while (s[index])
 	{
-		f(i, &s[i]);
-		i++;
+		f(index, &s[index]);
+		index++;
 	}
 }

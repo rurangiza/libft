@@ -6,9 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:42:19 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:42:46 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:32:37 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Compares the first {n} bytes of {s1} and {s2}
+*/
 
 #include "libft.h"
 

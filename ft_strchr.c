@@ -6,14 +6,12 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 11:40:47 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 15:34:11 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:55:15 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- *  Returns : A pointer to the first occurrence of character in str.
- *            If the character is not found,
- * 			  the function returns a null pointer.
+ * Locates first occurence of character {c} in string {s}
 */
 
 char	*ft_strchr(const char *s, int c)

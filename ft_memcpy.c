@@ -6,23 +6,27 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:16:51 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:42:56 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:34:35 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Copies {n} characters from {src} to {dest}
+*/
+
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t length)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t		i;
+	size_t		index;
 
-	i = 0;
+	index = 0;
 	if (!dest && !src)
 		return (0);
-	while (i < length)
+	while (index < n)
 	{
-		((char *)dest)[i] = ((char *)src)[i];
-		i++;
+		((char *)dest)[index] = ((char *)src)[index];
+		index++;
 	}
 	return (dest);
 }

@@ -6,9 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:15:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:44:09 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:52:30 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+ * Outputs the string {str} to the given file descriptor {fd}
+*/
 
 #include "libft.h"
 

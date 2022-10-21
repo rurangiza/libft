@@ -6,13 +6,13 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:19:37 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 18:03:38 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:48:16 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * copies the character {ch} (an unsigned char) 
- * to the first {nbr} characters of the string pointed to, by the argument {str}
+ * Copies given character {ch} to the first {nbr} characters
+ * of the string {str}
 */
 
 #include "libft.h"

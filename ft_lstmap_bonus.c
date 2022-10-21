@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:58:51 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 15:52:01 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:25:28 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Copie chaque noeud d'une liste chainee
- * dans une nouvelle liste chainee
- * en modifiant leurs contenus via une fonction precise.
+ * Copie every node of a linked list
+ * into a new linked list
+ * after modifying the content of each node with a given function
 */
 
 #include "libft.h"

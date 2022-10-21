@@ -6,34 +6,38 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 11:43:55 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:51:38 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Outputs integer {nbr} to the given file descriptor {fd}
+*/
+
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd)
+void	ft_putnbr_fd(int nbr, int fd)
 {
 	char	ch;
 
-	if (nb > 9)
+	if (nbr > 9)
 	{
-		ft_putnbr_fd((nb / 10), fd);
-		ft_putnbr_fd((nb % 10), fd);
+		ft_putnbr_fd((nbr / 10), fd);
+		ft_putnbr_fd((nbr % 10), fd);
 	}
-	else if (nb == -2147483648)
+	else if (nbr == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);
 	}
-	else if (nb < 0)
+	else if (nbr < 0)
 	{
 		ft_putchar_fd('-', fd);
-		nb = -nb;
-		ft_putnbr_fd(nb, fd);
+		nbr = -nbr;
+		ft_putnbr_fd(nbr, fd);
 	}
-	else if (nb >= 0 && nb < 10)
+	else if (nbr >= 0 && nbr < 10)
 	{
-		ch = nb + '0';
+		ch = nbr + '0';
 		ft_putchar_fd(ch, fd);
 	}
 }
