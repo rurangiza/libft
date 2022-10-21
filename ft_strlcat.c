@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 /*
- * Concatenates {dstsize} of {src} to {dest}
+ * Concatenates {dstsize} of {src} to {dest}.
  * 
  * Returns : total length of the string you tried to create
 */
