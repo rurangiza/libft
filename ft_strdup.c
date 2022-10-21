@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:44:31 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 16:44:02 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:43:50 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-The strdup() and strndup() functions are used to duplicate a string.
+ * Duplicate a string.
 */
 
 #include "libft.h"
@@ -35,12 +35,3 @@ char	*ft_strdup(const char *str)
 	str_copy[s_index] = '\0';
 	return (str_copy);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	const char *s1 = "Houraaaa!";
-// 	printf("Original : %s\n", s1);
-// 	printf("Copy : %s\n", ft_strdup(s1));
-// 	return (0);
-// }

@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 12:33:57 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:46:35 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Turns a string containing number into an integer
+/*
+ * Turns a string containing number into an integer
+*/
 
 #include "libft.h"
 #include <limits.h>
@@ -49,26 +51,3 @@ int	ft_atoi(const char *str)
 	}
 	return (sum * sign);
 }
-
-// #include <stdio.h>
-// #include <stdlib.h>
-
-// int	main(void)
-// {
-// 	int			i;
-// 	const char	nbr[21][50] = {
-// 		"1994", "  1994 ", " 19 94 ", "-1994 ",
-// 		" +-1994 ", "1994b", "b1994", "19b94",
-// 		"", " ", " hidhej ", " --23",
-// 		"2147483647", "-2147483648",
-// 		"2147483650", "-2147483650",
-// 		"+9223372036854775807", "-9223372036854775808",
-// 		"+9223372036854775810", "-9223372036854775810",
-// 		"  000000000000000000009485"
-// 	};
-
-// 	i = 0;
-// 	while (i < 21)
-// 		printf("[%d] %d\n", i, ft_atoi(nbr[i]));
-// 	return (0);
-// }

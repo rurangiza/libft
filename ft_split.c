@@ -6,22 +6,24 @@
 /*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 08:30:11 by Arsene           ###   ########.fr       */
+/*   Updated: 2022/10/21 08:42:51 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* 
  * Breaks up a string {str}
- * into an array of substrings
- * based on a seperator character
+ * into an {array} of substrings
+ * based on a seperator character {ch}
+ * 
+ * Returns array of sstrings
  */
 
 #include "libft.h"
 
 static int	count_words(char *str, char c);
+static char	**malloc_array(char *str, char ch);
 static char	*copy_word(char *str, char c);
 static char	**free_array(char **tab);
-static char	**malloc_array(char *str, char ch);
 
 char	**ft_split(char const *str, char ch)
 {
