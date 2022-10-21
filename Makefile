@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
+#    By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 13:53:56 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/20 17:52:07 by arurangi         ###   ########.fr        #
+#    Updated: 2022/10/21 08:25:33 by Arsene           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS =		ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 			ft_putnbr_fd.c ft_striteri.c ft_strmapi.c ft_itoa.c \
 
-BONUS =		ft_lstnew_bonus.c \
+SRCSB =		ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
 			ft_lstsize_bonus.c \
 			ft_lstlast_bonus.c \
@@ -33,7 +33,7 @@ BONUS =		ft_lstnew_bonus.c \
 NAME =		libft.a
 
 OBJS =		${SRCS:.c=.o}
-OBJSB =		${BONUS:.c=.o}
+OBJSB =		${SRCSB:.c=.o}
 
 FLAGS =		-Wall -Wextra -Werror 
 CC =		gcc ${FLAGS}

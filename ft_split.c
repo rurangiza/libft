@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/20 16:15:38 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 08:30:11 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,26 +27,26 @@ char	**ft_split(char const *str, char ch)
 {
 	char	**array;
 	int		a_index;
-	int		i;
+	int		s_index;
 
 	array = malloc_array((char *)str, ch);
 	if (!array)
 		return (NULL);
-	i = 0;
+	s_index = 0;
 	a_index = 0;
-	while (str[i])
+	while (str[s_index])
 	{
-		while (str[i] == ch && str[i])
-			i++;
-		if (str[i] != ch && str[i])
+		while (str[s_index] == ch && str[s_index])
+			s_index++;
+		if (str[s_index] != ch && str[s_index])
 		{
-			array[a_index] = copy_word((char *)str + i, ch);
+			array[a_index] = copy_word((char *)str + s_index, ch);
 			if (!array[a_index])
 				return (free_array(array));
 			a_index++;
 		}
-		while (str[i] != ch && str[i])
-			i++;
+		while (str[s_index] != ch && str[s_index])
+			s_index++;
 	}
 	array[a_index] = NULL;
 	return (array);
