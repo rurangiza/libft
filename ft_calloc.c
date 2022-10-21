@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:58:23 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 11:35:55 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:17:37 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
 
-	if (count > 65535 || size > 65535)
+	if (size != 0 && count >= (SIZE_MAX / size))
 		return (NULL);
 	ptr = malloc(size * count);
 	if (ptr == NULL)

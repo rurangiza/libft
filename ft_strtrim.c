@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:10:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 14:48:55 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:39:41 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ char	*ft_strtrim(char const *str, char const *set)
 	char	*trimmed_str;
 	int		length;
 
-	if (!str || !set)
+	if (!str)
 		return (0);
+	if (!set)
+		return (ft_strdup(str));
 	start = 0;
 	while (ft_strchr(set, str[start]) != NULL && str[start] != '\0')
 		start++;

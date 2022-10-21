@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 16:00:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 12:02:30 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:24:55 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!new)
+	if (!new || !lst)
 		return ;
 	if (!*lst)
 	{

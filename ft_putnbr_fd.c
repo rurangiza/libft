@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:32:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 12:51:38 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:17:53 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_putnbr_fd(int nbr, int fd)
 		ft_putnbr_fd((nbr / 10), fd);
 		ft_putnbr_fd((nbr % 10), fd);
 	}
-	else if (nbr == -2147483648)
+	else if (nbr == INT_MIN)
 	{
 		ft_putstr_fd("-2147483648", fd);
 	}
@@ -41,8 +41,3 @@ void	ft_putnbr_fd(int nbr, int fd)
 		ft_putchar_fd(ch, fd);
 	}
 }
-
-// int main(void)
-// {
-// 	ft_putnbr(677);
-// }

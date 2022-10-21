@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 09:10:02 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 13:07:09 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:23:40 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	int		j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	length = ft_strlen(s1) + ft_strlen(s2);
 	s3 = malloc(sizeof(char) * (length + 1));
 	if (!s3)

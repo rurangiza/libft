@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 15:51:07 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 14:48:01 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:36:34 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	h_index;
 	size_t	n_index;
 
-	if (!haystack && !len)
-		return (NULL);
 	if (needle[0])
 	{
 		h_index = 0;
