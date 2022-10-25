@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:58:51 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 15:52:22 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/10/25 13:41:48 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	new_lst = 0;
 	while (lst)
 	{
-		tmp = ft_lstnew(f(lst->content));
+		tmp = malloc(sizeof(t_list));
 		if (!tmp)
+			ft_lstclear(&new_lst, del);
+		else
 		{
-			del(tmp->content);
-			free(tmp);
+			tmp->content = f(lst->content);
+			tmp->next = NULL;
+			ft_lstadd_back(&new_lst, tmp);
 		}
-		ft_lstadd_back(&new_lst, tmp);
 		lst = lst->next;
 	}
 	return (new_lst);
