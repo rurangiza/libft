@@ -1,9 +1,13 @@
 # Libft
 ## Functions to add
 [] get_next_line
+
 [] inter
+
 [] union
+
 [] itohex
+
 [] hextoi
 
 ## A library of basic functions in C
