@@ -1,14 +1,8 @@
 # Libft
-## Functions to add
-- [ ] get_next_line
-- [ ] inter
-- [ ] union
-- [ ] itohex
-- [ ] hextoi
 
-## A library of basic functions in C
+## Personal Library of function in C
 
-This project consists of re-writing built-in functions in C from scratch using our own logic.
+This project consists of re-writing built-in functions in C from scratch using our own logic and later, adding new functions.
 
 The goal being to understand how they work exactly, what clever tricks were used to implement them, and recognize their strengths/limitations so we can use them in a more deliberate way.
 
@@ -36,3 +30,9 @@ In this project, I learned how to:
 |   |   |
 
 
+## Functions to add
+- [ ] get_next_line
+- [ ] inter
+- [ ] union
+- [ ] itohex
+- [ ] hextoi
