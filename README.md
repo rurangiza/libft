@@ -11,18 +11,19 @@ In this project, I learned how to:
 - Create a custom library
 - Write a Makefile 
 
+
 ## Checkers
-| Function name | Description |
-|---------------|-------------|
+| Function name                                                        | Description |
+|---------------                                                       |-------------|
 | [isalpha](https://github.com/rurangiza/libft/blob/main/ft_isalpha.c) | checks whether a character is an alphabet or not                                     |
 | [isdigit](https://github.com/rurangiza/libft/blob/main/ft_isdigit.c) | checks whether a character is numeric character (0-9) or not                         |
 | [isalnum](https://github.com/rurangiza/libft/blob/main/ft_isalnum.c) | checks whether the argument is an alphanumeric character (alphabet or number) or not |
 | [isascii](https://github.com/rurangiza/libft/blob/main/ft_isascii.c) | check whether the argument is an ascii value                                         |
 | [isprint](https://github.com/rurangiza/libft/blob/main/ft_isprint.c) | check whether the argument is a printable character                                  |
-
+  
 ## Converters
-| Function name | Description |
-|---------------|-------------|
+| Function name                                                        | Description |
+|---------------                                                       |-------------|
 | [toupper](https://github.com/rurangiza/libft/blob/main/ft_toupper.c) | converts a lowercase alphabet to an uppercase                                        |
 | [tolower](https://github.com/rurangiza/libft/blob/main/ft_tolower.c) | converts an uppercase alphabet to lowercase                                          |
 | [atoi](https://github.com/rurangiza/libft/blob/main/ft_atoi.c)       | converts a string into an integer                                                    |
