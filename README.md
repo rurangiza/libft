@@ -38,6 +38,32 @@ In this project, I learned how to:
 | [calloc](https://github.com/rurangiza/libft/blob/main/ft_calloc.c)   | allocates a specified amount of memory and initialize it to zero                     |
 | [strdup](https://github.com/rurangiza/libft/blob/main/ft_strdup.c)   | duplicates a string (deep copy)                                                      |
 
+## Additional
+
+| Function name                                                              | Description                                                                                      |
+|----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| [substr](https://github.com/rurangiza/libft/blob/main/ft_substr.c)         | duplicates part of a string                                                                      |
+| [strjoin](https://github.com/rurangiza/libft/blob/main/ft_strjoin.c)       | concatenates two strings to create a third                                                       |
+| [strtrim](https://github.com/rurangiza/libft/blob/main/ft_strtrim.c)       | removes a set of characters at beginning and end of a string                                     |
+| [split](https://github.com/rurangiza/libft/blob/main/ft_split.c)           | breaks up a string into an array of substrings based on a seperator character                    |
+| [itoa](https://github.com/rurangiza/libft/blob/main/ft_itoa.c)             | converts an integer into a string                                                                |
+| [strmapi](https://github.com/rurangiza/libft/blob/main/ft_strmapi.c)       | applies a function to each character of a string to create a new string (returns the new string) |
+| [striteri](https://github.com/rurangiza/libft/blob/main/ft_striteri.c)     | applies a function to each character of a string to create a new string                          |
+| [putchar_fd](https://github.com/rurangiza/libft/blob/main/ft_putchar_fd.c) | outputs a character to a given file descriptor                                                   |
+| [putstr_fd](https://github.com/rurangiza/libft/blob/main/ft_putstr_fd.c)   | outputs a string to a given file descriptor                                                      |
+| [putendl_fd](https://github.com/rurangiza/libft/blob/main/ft_putendl_fd.c) | outputs a string to a given file descriptor, followed by a new line                              |
+| [putnbr_fd](https://github.com/rurangiza/libft/blob/main/ft_putnbr_fd.c)   | outputs an integer to a given file descriptor                                                    |
+## Manipulating Linked Lists
+| Function name                                                                        | Description                                         |
+|--------------------------------------------------------------------------------------|-----------------------------------------------------|
+| [lstnew](https://github.com/rurangiza/libft/blob/main/ft_lstnew_bonus.c)             | creates a node containing given content             |
+| [lstadd_front](https://github.com/rurangiza/libft/blob/main/ft_lstadd_front_bonus.c) | adds a given node at the beginning of a linked list |
+| [lstsize](https://github.com/rurangiza/libft/blob/main/ft_lstsize_bonus.c)           | counts the number of nodes in a linked list         |
+| [lstlast](https://github.com/rurangiza/libft/blob/main/ft_lstlast_bonus.c)           | returns the last node of a linked list              |
+| [lstadd_back](https://github.com/rurangiza/libft/blob/main/ft_lstadd_back_bonus.c)   | adds a given node at the end of a linked list       |
+| [lstdelone](https://github.com/rurangiza/libft/blob/main/ft_lstdelone_bonus.c)       | deletes a node                                      |
+| [lstclear](https://github.com/rurangiza/libft/blob/main/ft_lstclear_bonus.c)         | deletes a linked list one node at a time            |
+
 
 ### Tester
 francinette
