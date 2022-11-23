@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 13:53:56 by arurangi          #+#    #+#              #
-#    Updated: 2022/10/21 11:10:57 by arurangi         ###   ########.fr        #
+#    Updated: 2022/11/23 15:22:52 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,12 +36,13 @@ OBJS =		${SRCS:.c=.o}
 OBJSB =		${SRCSB:.c=.o}
 
 FLAGS =		-Wall -Wextra -Werror 
-CC =		gcc ${FLAGS}
+CC =		gcc ${FLAGS} main.c
 RM =		rm -f
 
 all:		${NAME}
 
 ${NAME} :	${OBJS}
+				${CC} -c ${SRCS}
 				ar rcs ${NAME} ${OBJS}
 
 bonus:		${OBJS} ${OBJSB}
