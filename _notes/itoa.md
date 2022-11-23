@@ -1,6 +1,10 @@
 # Itoa
 ## Converts an integer into a string
 The itoa function allows you to convert an integer into a string.
+
+This is useful if for exemple, 
+
+
 But to understand how it's implemented, we first need to understand the relationship between integers and characters in C.
 
 ### What is an integer?
