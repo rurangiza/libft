@@ -6,11 +6,14 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 13:38:11 by arurangi          #+#    #+#             */
-/*   Updated: 2022/11/23 15:31:14 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/11/24 09:28:04 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
+ *
+ *  inter()
+ *  
  *	Write a program
  *	that takes two strings
  *	and displays, without doubles, the characters they have in common
@@ -24,13 +27,12 @@ int	first_encounter(char ch, char *s1, int length);
 
 int main(int ac, char **av)
 {
-	int		i;
-	int		j;
 	char	*s1;
 	char	*s2;
+	int		i; // Iterate thorugh s1
+	int		j; // Iterate through s2
 
-
-	// Take two strings
+	// Check for valid number of arguments
 	if (ac != 3)
 	{
 		write(1, "Usage: ./program <s1> <s2>", 26);
@@ -38,7 +40,8 @@ int main(int ac, char **av)
 	}
 	s1 = av[1];
 	s2 = av[2];
-	// Iterate through the first one
+
+	// Print every character that I have not seen before
 	i = 0;
 	while (s1[i])
 	{
@@ -60,6 +63,7 @@ int main(int ac, char **av)
 	return (0);
 }
 
+// Check if a given character has already been seen
 int	first_encounter(char ch, char *s1, int length)
 {
 	int i;

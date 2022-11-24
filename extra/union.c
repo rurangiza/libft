@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:32:22 by arurangi          #+#    #+#             */
-/*   Updated: 2022/11/24 09:24:01 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/11/24 09:28:39 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	main(int ac, char **av)
 {
 	char	*s1;
 	char	*s2;
-	int		i;
-	int		j;
+	int		i; // Iterate through s1
+	int		j; // Iterate through s2
 
 	// Check for valid number of arguments
 	if (ac != 3)
