@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 13:53:56 by arurangi          #+#    #+#              #
-#    Updated: 2022/11/23 15:22:52 by arurangi         ###   ########.fr        #
+#    Updated: 2022/11/25 12:41:22 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS =		ft_atoi.c ft_bzero.c ft_calloc.c \
 			ft_substr.c ft_split.c ft_strjoin.c ft_strtrim.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 			ft_putnbr_fd.c ft_striteri.c ft_strmapi.c ft_itoa.c \
+			ft_split_fd.c
 
 SRCSB =		ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
@@ -36,7 +37,7 @@ OBJS =		${SRCS:.c=.o}
 OBJSB =		${SRCSB:.c=.o}
 
 FLAGS =		-Wall -Wextra -Werror 
-CC =		gcc ${FLAGS} main.c
+CC =		gcc ${FLAGS}
 RM =		rm -f
 
 all:		${NAME}
