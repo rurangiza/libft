@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:32:22 by arurangi          #+#    #+#             */
-/*   Updated: 2022/11/24 09:28:39 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/11/25 11:54:25 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	main(int ac, char **av)
 {
 	char	*s1;
 	char	*s2;
-	int		i; // Iterate through s1
-	int		j; // Iterate through s2
+	int		i;
+	int		j;
 
 	// Check for valid number of arguments
 	if (ac != 3)
@@ -65,8 +65,8 @@ int	main(int ac, char **av)
 // Check if a given character has already been seen
 int	first_encounter(char ch, char *str, int n)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (i < n)
 	{

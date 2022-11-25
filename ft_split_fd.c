@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 09:43:09 by arurangi          #+#    #+#             */
-/*   Updated: 2022/11/25 11:46:32 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/11/25 11:52:26 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ char	*read_and_save(int fd)
 	if (!tmp)
 		return (NULL);
 	tmp[0] = 0;
-
 	bytes_read = 1;
 	while (bytes_read > 0)
 	{
@@ -63,6 +62,5 @@ char	*read_and_save(int fd)
 		buffer[bytes_read] = '\0';
 		tmp = ft_strjoin(tmp, buffer);
 	}
-
 	return (tmp);
 }
