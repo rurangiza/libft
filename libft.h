@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 14:01:48 by arurangi          #+#    #+#             */
-/*   Updated: 2022/11/23 15:27:42 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/11/25 11:48:46 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *str, char ch);
+char	**ft_split_fd(int fd, char seperator);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
@@ -73,5 +74,13 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+# define CRED     "\x1b[31m"
+# define CGREEN   "\x1b[32m"
+# define CYELLOW  "\x1b[33m"
+# define CBLUE    "\x1b[34m"
+# define CMAGENTA "\x1b[35m"
+# define CCYAN    "\x1b[36m"
+# define CRESET   "\x1b[0m"
 
 #endif

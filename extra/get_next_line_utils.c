@@ -3,14 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arurangi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:17:53 by arurangi          #+#    #+#             */
-/*   Updated: 2022/11/23 16:49:28 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/11/24 10:47:20 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "gnl.h"
+#include "get_next_line.h"
+
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str)
+	{
+		while(str[i])
+			i++;
+	}
+	return (i);
+}
 
 int	no_eol_found(char *buffer)
 {
@@ -29,7 +42,7 @@ int	no_eol_found(char *buffer)
 	return (1);
 }
 
-char	*str_join(char *stash, char *buffer)
+char	*ft_strjoin(char *stash, char *buffer)
 {
 	int		i;
 	int		j;
@@ -54,7 +67,7 @@ char	*str_join(char *stash, char *buffer)
 	j = 0;
 	while (buffer[j])
 		nstash[i++] = buffer[j++];
-	ntash[i + j] = '\0';
+	nstash[ft_strlen(stash) + ft_strlen(buffer)] = '\0';
 	free(stash);
 	return (nstash);
 }
@@ -64,6 +77,3 @@ char	*free_stash(char *stash)
 	free(stash);
 	return (NULL);
 }
-
-
-
