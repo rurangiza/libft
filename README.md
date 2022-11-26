@@ -69,6 +69,7 @@ In this project, I learned how to:
 | [putstr_fd](https://github.com/rurangiza/libft/blob/main/ft_putstr_fd.c)   | outputs a string to a given file descriptor                                                      |
 | [putendl_fd](https://github.com/rurangiza/libft/blob/main/ft_putendl_fd.c) | outputs a string to a given file descriptor, followed by a new line                              |
 | [putnbr_fd](https://github.com/rurangiza/libft/blob/main/ft_putnbr_fd.c)   | outputs an integer to a given file descriptor                                                    |
+| [ft_split_fd](https://github.com/rurangiza/libft/blob/main/ft_split_fd.c)  | breaks text file into an array of substrings based on a separator |
 
 ## Linked Lists
 | Function name                                                                        | Description                                         |
