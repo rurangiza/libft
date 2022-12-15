@@ -6,7 +6,7 @@
 /*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 17:08:24 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/26 10:29:28 by Arsene           ###   ########.fr       */
+/*   Updated: 2022/12/15 10:49:42 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	if (start > (unsigned int)ft_strlen(s))
 		return (ft_strdup(""));
 	i = 0;
 	while (s[start + i] && i < len)

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Arsene <Arsene@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 15:15:58 by arurangi          #+#    #+#             */
-/*   Updated: 2022/12/15 10:47:57 by Arsene           ###   ########.fr       */
+/*   Created: 2022/12/15 10:03:38 by Arsene            #+#    #+#             */
+/*   Updated: 2022/12/15 10:54:43 by Arsene           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Calculates length of a given string
+ * Outputs the character {c} to the given file descriptor {fd}
 */
 
 #include "libft.h"
 
-int	ft_strlen(const char *s)
+void	ft_putchar(char ch)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	write (1, &ch, 1);
 }
