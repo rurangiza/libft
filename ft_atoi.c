@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:49:42 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 15:10:47 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/12/20 13:49:25 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,17 @@ int	ft_atoi(const char *str)
 	long	sign;
 
 	index = 0;
-	while ((((str[index] >= 9 && str[index] <= 13) || str[index] == 32)))
+	while (ft_isspace(str[index]))
 		index++;
 	sign = 1;
-	if (str[index] == '-' || str[index] == '+')
+	if (ft_issign(str[index]))
 	{
 		if (str[index] == '-')
 			sign *= -1;
 		index++;
 	}
 	sum = 0;
-	while (str[index] >= 48 && str[index] <= 57)
+	while (ft_isdigit(str[index]))
 	{
 		if (sum >= LONG_MAX / 10 || (sum == LONG_MAX && str[index] - '0' > 7))
 			handle_long_return(sign);

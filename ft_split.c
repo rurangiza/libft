@@ -6,7 +6,7 @@
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 11:49:14 by arurangi          #+#    #+#             */
-/*   Updated: 2022/10/21 12:53:00 by arurangi         ###   ########.fr       */
+/*   Updated: 2022/12/20 13:56:40 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ static char	*copy_word(char *str, char ch)
 	index = 0;
 	while (index < length)
 	{
-		word[index] = str[index];
+		word[index] = str[index]; 
 		index++;
 	}
 	word[index] = '\0';
