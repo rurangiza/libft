@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_issign.c                                        :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 13:44:13 by arurangi          #+#    #+#             */
-/*   Updated: 2023/01/09 17:06:18 by arurangi         ###   ########.fr       */
+/*   Created: 2023/01/09 09:01:36 by arurangi          #+#    #+#             */
+/*   Updated: 2023/01/09 17:08:52 by arurangi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
- * Checks whether ch is a minus or plus sign
-*/
+#include "libc.h"
 
-int	ft_issign(char ch)
+int	ft_abs(int x)
 {
-	if (ch && (ch == '-' || ch == '+'))
-		return (1);
-	return (0);
+	if (x < 0)
+		return (-x);
+	else
+		return (x);
 }

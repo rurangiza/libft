@@ -6,7 +6,7 @@
 #    By: arurangi <arurangi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/05 13:53:56 by arurangi          #+#    #+#              #
-#    Updated: 2022/12/20 16:37:07 by arurangi         ###   ########.fr        #
+#    Updated: 2023/01/09 08:59:42 by arurangi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c \
 			ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 			success_msg.c error_msg.c info_msg.c \
 			get_next_line.c get_next_line_utils.c \
+			ft_swap.c \
 			
 #SRCSB				
 
